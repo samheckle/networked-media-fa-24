@@ -101,25 +101,29 @@ In order to check whether `node` and `npm` were properly installed, run the foll
 
 *Try out #2: Create a simple file called `script.js`, which just contains a `console.log` statement. Run that with node.*
 
-## 🆕 Starting a node project 🆕
+## 🆕 Starting a node project 🆕 using Github and your local computer
 
-In the command line of your droplet, create a folder for your fist website and navigate to it.
+Go to [networked-media-file-structure](https://github.com/samheckle/networked-media-file-structure) and click "fork". Rename the repository to "networked-media". This will be the cloud backup of all your projects. If you don't know how to clone the repository (we will cover this later), you can download the zip file by clicking the green "Code" button and press download zip. This is the basic file structure for all our projects. I have set up a template "project1" folder for you, and you can fill out the `documentation.md` file or delete it when you complete your work. 
+
+After extracting the zip, move the folder to a safe location on your computer. I have a `dev` folder which is located on my user, so the location where I put my file is `samheckle/dev/networked-media`. You will store all your class data here. 
+
+Open this folder in the terminal. You can navigate in MacOS by right-clicking in Finder and pressing "Open in Terminal". Or, you can open your terminal and use `cd` to manually navigate through all the files. 
 
 ```bash
 cd ~
 mkdir networked-media
 cd networked-media
-mkdir webserver
-cd webserver
+mkdir class-demo
+cd class-demo
 ```
 
-Maybe run `pwd` after you’ve done all this, to see the full path of where your web server will live.  In my case, the result is `/root/networked-media/webserver`.
+Maybe run `pwd` after you’ve done all this, to see the full path of where your web server will live.  In my case, the result is `/root/networked-media/class-demo`.
 
 We will start a `node` project in this directory. 
 
 ---
 
-Once in this `webserver` folder, run:
+Once in this `class-demo` folder, run:
 
 ```bash
 npm init
