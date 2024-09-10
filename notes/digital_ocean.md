@@ -47,7 +47,7 @@ Congratulations, you now have a server running *in the cloud!*
 
 In order to connect to it, we will use `ssh`. `ssh` stands for “Secure Shell”, and it’s a simple (and secure) protocol for connecting to a computer remotely. Through `ssh` we get access to the remote computer’s command line.
 
-Open up your **Terminal** (or PowerShell if you are on Windows,) and type the following command (replace `YOUR_IP` with the IP address your droplet shows in the Digital Ocean interface):
+Open up your **Terminal** (or GitBash if you are on Windows,) and type the following command (replace `YOUR_IP` with the IP address your droplet shows in the Digital Ocean interface):
 
 ```bash
 ssh root@YOUR_IP
@@ -101,19 +101,15 @@ In order to check whether `node` and `npm` were properly installed, run the foll
 
 *Try out #2: Create a simple file called `script.js`, which just contains a `console.log` statement. Run that with node.*
 
-## 🆕 Starting a node project 🆕
+## 🆕 Starting a node project 🆕 using Github and your local computer
 
-In the command line of your droplet, create a folder for your fist website and navigate to it.
+Go to [networked-media-file-structure](https://github.com/samheckle/networked-media-file-structure) and click "fork". Rename the repository to "networked-media". This will be the cloud backup of all your projects. If you don't know how to clone the repository (we will cover this later), you can download the zip file by clicking the green "Code" button and press download zip. This is the basic file structure for all our projects. I have set up the class file structure for you, and you can fill out the `documentation.md` file or delete it when you complete your work. 
 
-```bash
-cd ~
-mkdir networked-media
-cd networked-media
-mkdir webserver
-cd webserver
-```
+After extracting the zip, move the folder to a safe location on your computer. I have a `dev` folder which is located on my user, so the location where I put my file is `samheckle/dev/networked-media`. You will store all your class data here. 
 
-Maybe run `pwd` after you’ve done all this, to see the full path of where your web server will live.  In my case, the result is `/root/networked-media/webserver`.
+Navigate to `networked-media/webserver` folder on your computer in either way:
+1. You can navigate in MacOS by right-clicking in Finder and pressing "Open in Terminal".
+2. Or, you can open your terminal and use `cd` to manually navigate through all the files. 
 
 We will start a `node` project in this directory. 
 
@@ -149,7 +145,7 @@ This is the default barebones structure of a node project, so you should get use
 
 You will create and edit the server file on your own computer, and upload it to the droplet once it’s ready. During the first few weeks of the class we won’t be writing any more server-side code, so this file will remain unchanged. Once we start adding more functionality to our servers, we’ll look at a more efficient workflow for updating the server.
 
-Open your code editor and create a new file. You can save it anywhere on your file system, under the name `server.js`. Paste the code below in the file:
+Open your code editor and create a new file. You should save it under `networked-media/webserver`, under the name `server.js`. Paste the code below in the file:
 
 ```jsx
 // Importing the express library we've installed; This library allows us to create a simple web server.
@@ -187,7 +183,7 @@ In the dropdown at the top, pick the `SFTP (SSH File Transfer Protocol)` option,
 
 Back in the main Cyberduck window, double-click on the newly added item, and a new Finder-like window will open, with the contents of your droplet in it. 
 
-Navigate to the folder where you’ve set up your npm project (`/root/networked-media/webserver` in my case,) and drag-and-drop the `server.js` file from your Finder window into the correct folder in the Cyberduck window. This will copy the file to the droplet.
+Navigate to your local folder on your computer, and drag all of the contents inside your `networked-media` folder from your Finder window into the correct folder in the Cyberduck window. This will copy the files to the droplet.
 
 ### Running the server
 
@@ -207,9 +203,9 @@ Open a web browser and navigate to `[http://your.ip.address.here/test](http://yo
 
 ### AND FINALLY, adding .html file(s) to the server 😓
 
-Inside of the same folder that `server.js` lives in (`/root/networked-media/webserver` in my case,) create a new folder called `public`. You can do this from the terminal by using the command `mkdir public`, or from Cyberduck (Option-Click → New Folder.)
+Inside of the same folder that `server.js` lives in (`networked-media/webserver` in my case,) create a new folder called `public`. You can do this from the terminal by using the command `mkdir public`, or from Cyberduck (Option-Click → New Folder.)
 
-On your computer, create an `index.html` file, and add some simple content to it (or grab an .html file you already have.) If you’re looking for inspiration for creating a new one, check out the [Introduction to HTML](https://networkedmedia.imany.io/3b1c22c9eb994f06aab8658209b29ee0) tutorial. Using Cyberduck, copy the `index.html` file into the `public` directory within your web server.
+On your computer, create an `index.html` file, and add some simple content to it (or grab an .html file you already have.) If you’re looking for inspiration for creating a new one, check out the [Introduction to HTML](https://github.com/samheckle/networked-media-fa-24/blob/main/notes/html.md) tutorial. Using Cyberduck, copy the `index.html` file into the `public` directory within your web server.
 
 Open your web browser and navigate to `http://your.ip.address.here/` (`http://137.184.151.138/` in my case,) or `http://your.ip.address.here/index.html`. You should see the HTML page contents displayed in your browser.
 
