@@ -1,0 +1,19 @@
+p {
+    background-color: lightblue;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+#green-img{
+    /* this is a comment in css */
+    /* you can modify both the width and the height, but might have distortion if you do both and don't maintain the original aspect ratio */
+    width: 400px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+    border: 5px dashed blue;
+}
