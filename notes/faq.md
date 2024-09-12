@@ -10,8 +10,8 @@ You should *always* be reading error messages in the terminal or the console, th
 - Check if the server is running with `pm2`. 
     1. Connect to your server by logging in to your server in terminal using `ssh root@{your-ip-address}`. Type in your password when prompted (remember the keystrokes aren't recorded so it does not look like you are typing)
     2. Navigate to where you are running your server. This will be where your `server.js` file is located. 
-    ![img.png](https://drive.google.com/uc?id=1a8HS5ga4LXl0zjCnEc8s8JbOIU-qWGoI)
     3. List all of the servers that are running using `pm2 ls`. It should spit out something like this:
+    ![img.png](https://drive.google.com/uc?id=1a8HS5ga4LXl0zjCnEc8s8JbOIU-qWGoI)
     4. If you see `errored`, it means you need to restart the server. You can do this by running
         ``` 
             pm2 kill
