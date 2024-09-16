@@ -51,7 +51,7 @@ The script above does two things: first, it opens a pop-up in your browser, sayi
 Interacting with the DOM can only happen *once the HTML content of the page has loaded*. Since our JS script might load before the actual HTML of the page, we need a way of *listening* for when the HTML page has completed loading everything. Fortunately, there is an easy solution for that:
 
 ``` js
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
   init();
 };
@@ -85,7 +85,7 @@ Let’s look at three different types of selectors. We’ll start with the follo
 We have four paragraphs. One of them has no attributes, one of them has an `id`, and the other two have an identical `class` attribute. The code below uses the `innerHTML()` function inside Javascript in order to change the content of our paragraphs. Using different selectors, we can achieve different outcomes:
 
 ```jsx
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
   document.getElementById("YourElementId").innerHTML("updated content with javascript");
 };
@@ -112,7 +112,7 @@ We can use JavaScript to directly specify CSS properties for the elements we hav
 
 ```jsx
 
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
   document.getElementById("importantParagraph").innerHTML("updated content with javascript");
 
@@ -128,7 +128,7 @@ Many of the attributes are the same between updating with JavaScript and writing
 We can also use JavaScript to assign a class to an element that doesn’t already have it, or conversely, to remove a class from an element which does have it. For the former, we could write the code below in order to programatically give the `importantParagraph` a `blue-paragraph` class as well. The `addClass` function 
 
 ```jsx
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
   document.getElementById("importantParagraph").innerHTML("updated content with javascript");
 
@@ -143,7 +143,7 @@ We can also use JavaScript in order to create entirely new elements, or remove e
 I’ll start with removing, since it’s easier. Once we figure out our selector, we simply call `.remove()` on the value returned by the selector in order to entirely remove the element from the DOM. For removing all paragraphs with the `blue-paragraph` class in the example above, we would simply call
 
 ```jsx
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
 document.getElementById("importantParagraph").remove();
 }
@@ -168,7 +168,7 @@ Creating a new element is a two-step process. First, we need to know what type o
 Let’s use this HTML page, and use JavaScript to add a paragraph inside of the `container` div.
 
 ```jsx
-window.onload => () {
+window.onload = () => {
   console.log("page is fully loaded");
   // find the tag name of the element you want to create
   // p is paragraph tag
