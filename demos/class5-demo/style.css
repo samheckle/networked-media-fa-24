@@ -1,0 +1,9 @@
+.text-body{
+    background-color: blueviolet;
+    color: white;
+    font-size: 36px;
+    font-family: monospace;
+    /* shorthand for 10px on top / bottom, 5px left/right */
+    padding: 10px 5px;
+    line-height: 62px;
+}
