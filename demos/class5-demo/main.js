@@ -42,6 +42,7 @@ function modifySpanBackground(){
 
     for(let i = 0; i < allSpans.length; i++){
         // allSpans[i].textContent = date.toUTCString()
+        allSpans[i].style.backgroundColor = randomColor(colorArray)
         allSpans[i].textContent = date.toLocaleTimeString()
     }
 }
