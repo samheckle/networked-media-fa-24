@@ -1,0 +1,47 @@
+.container{
+    /* height: 100px; */
+    background-color: lightgreen;
+    margin-top: 2px;
+    position: relative;
+}
+
+p{
+    width: 50%;
+}
+
+body{
+    /* height: 100%; */
+    /* using vertical height (vh) as our unit of measurement */
+    /* other measurements are px, %, and em  */
+    height: 100vh;
+    /* for margin 0, we don't need to specify the units because it is 0*/
+    margin: 0;
+    overflow: hidden;
+}
+
+.button{
+    /* float: right; */
+    /* absolute positioning allows us to reset an anchor container for an item */
+    /* it is always positioned in relation to the closest container that is "relative"  */
+    /* if relative is not defined, it uses the body by default */
+    position: absolute;
+    /* top, left, right, and bottom can only be used with absolute positioning */
+    top: 50%; 
+    /* absolute positioning also does not require a unit, because it is always in px */
+    right: 10;
+    margin-right: 10px;
+    z-index: 1000000;
+}
+
+#light-container{
+    height: 150px;
+    text-align: center;
+}
+
+.day{
+    background-color: skyblue;
+}
+
+.night{
+    background-color: black;
+}
