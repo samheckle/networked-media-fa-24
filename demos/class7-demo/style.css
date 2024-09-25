@@ -1,0 +1,54 @@
+body{
+    background-color: lightgreen;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-bar{
+    background-color: lightblue;
+    height: 200px;
+    width: 100%;
+    /* flex box on parent */
+    display: flex;
+    /* position things center horizontally */
+    justify-content: center;
+    /* position things center vertically */
+    align-items: center;
+    /* space in between flex children */
+    gap: 10px;
+}
+
+.nav-element{
+    background-color: lightpink;
+    height:100px;
+    width: 100px;
+    opacity: .5;
+    transition: opacity 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-element:hover{
+    opacity: 1;
+    /* transition property: attribute to be modified, how long the attribute takes to modify, how it will modify */
+    transition: opacity 1s ease-in;
+}
+
+.content-container{
+    width: 100%;
+    background-color: orange;
+    flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rotate{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+}
