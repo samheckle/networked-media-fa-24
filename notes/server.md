@@ -35,7 +35,7 @@ Once you’ve installed `node` on your laptop, create a new folder for this tuto
     ```jsx
     const express = require('express')
     
-    var app = express()
+    let app = express()
     
     // If the user just goes to the "route" /test then run this function
     app.get('/test', function(request, response) {
@@ -101,7 +101,7 @@ If we want files in our `public` directory to be accessible to the web browser (
 ```jsx
 const express = require('express')
 
-var app = express()
+let app = express()
 
 // Tell Express to look in the "public" folder for any files first
 **app.use(express.static('public'))**
@@ -147,7 +147,7 @@ In addition to identifying the web resource, [URIs](https://en.wikipedia.org/wik
 ```jsx
 const express = require('express')
 
-var app = express()
+let app = express()
 
 app.use(express.static('public'))
 
@@ -174,7 +174,7 @@ If you would like to dynamically serve a file based upon a request to a “route
 ```jsx
 const express = require('express')
 
-var app = express()
+let app = express()
 
 app.use(express.static('public'))
 
@@ -189,7 +189,7 @@ app.get('/', function(request, response) {
 app.get('/randomfile', function(request, response) {
     // Files be images, audio, html, text or any other file type. 
     // In this example, we are sending a file named "a-random-file.html"
-    var fileToSend = "a-random-file.html" 
+    let fileToSend = "a-random-file.html" 
 
     // sendFile will send the desired file, and will look for it in the folder
     // specified by the `root` property. In our case, it'll look in the public folder.
@@ -228,10 +228,10 @@ app.listen(8000, function() {
 ```jsx
 const express = require('express')
 
-var app = express()
+let app = express()
 app.use(express.static('public'))
 
-var receivedData = []
+let receivedData = []
 
 // This is the endpoint which receives the form's submitted data.
 app.get("/submit", function(request, response) {
@@ -264,9 +264,9 @@ app.get('/messages', function(request, response) {
         response.send("No messages yet...")
     } else {
         // Otherwise, we build a string containing the usernames and messages.
-        var r = ""
-        for (var i = 0; i < receivedData.length; i++) {
-            var currentData = receivedData[i]
+        let r = ""
+        for (let i = 0; i < receivedData.length; i++) {
+            let currentData = receivedData[i]
             r = r + currentData.user + " said: " + currentData.message + "<br/>"
         }
     
