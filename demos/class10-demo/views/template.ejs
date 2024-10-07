@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>my new template</title>
+    </head>
+    <body>
+        hi
+        <% message.forEach((m)=>{ %>
+            <% if(m.visible) {  %>
+                <h2> <%=m.note %> </h2>
+            <% } else { %> 
+                <h2>sorry you can't see this</h2>
+        <% } }) %> 
+    </body>
+</html>
