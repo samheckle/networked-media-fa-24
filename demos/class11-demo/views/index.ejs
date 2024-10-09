@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>💖</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="app-container">
+            <div class="input-container">
+                <form method="POST" action="/upload" enctype="multipart/form-data">
+                    <input type="text" name="caption">
+                    <div class="controls-container">
+                        <input type="file" name="myImage">
+                        <input type="submit" name="btn" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="messages-container">
+                <% posts.forEach( (singlePost) =>{ %>
+                    <div class="date"><%= singlePost.date %></div>
+                    <div class="caption"><%= singlePost.cap %></div>
+                <% }) %>
+
+            </div>
+        </div>
+    </body>
+</html>

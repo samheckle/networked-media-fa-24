@@ -1,0 +1,24 @@
+.app-container{
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    width: 69%;
+}
+
+.input-container{
+    border: 5px dashed lightgreen;
+    padding: 10px;
+    margin: auto;
+}
+
+input[type="text"]{
+    width: 100%;
+    height: 50px;
+}
+
+.controls-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+}
