@@ -79,21 +79,6 @@ Once you’ve installed `node` on your laptop, create a new folder for this tuto
     npx nodemon server.js
     ```
 
-3. You can also add this command to the `scripts` in your package.json
-
-    ```jsx
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js",
-        "watch": "npx nodemon server.js"
-    },
-    ```
-4. And run the command to start the server
-
-    ```bash
-    npm run watch
-    ```
-
 ## Exposing the `public` directory for static files
 
 If we want files in our `public` directory to be accessible to the web browser (remember how so far we’ve been adding all our `.html`, `.css` and `.js` files to the `public` directory), we need to explicitly tell Express to do so:
