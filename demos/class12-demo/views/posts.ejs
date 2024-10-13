@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>see all posts</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <%- include("nav.ejs", {}) %>
+
+      <% for(let i = 0; i < arrayToBeSent.length; i++) { %>
+        <!-- arrayToBeSent[i] -->
+         <!-- message-item is the container for each individual post -->
+         <div class="message-item"> 
+            <!-- delete functionality -->
+             <form method="GET" action="/delete">
+                <input type="submit" value="x">
+                <input type="hidden" name="postId" value="<%= arrayToBeSent[i].postNumber %>">
+             </form>
+            <!-- container for each date to be shown -->
+            <div class="date">
+                <%= arrayToBeSent[i].date %>
+            </div>
+            <!-- container for the caption -->
+            <div class="message">
+                <%= arrayToBeSent[i].text %>
+            </div>
+
+            <!-- if the image exists, show the image -->
+            <% if(arrayToBeSent[i].imgSrc){ %>
+                <div class="item-image">
+                    <img src="<%= arrayToBeSent[i].imgSrc %>">
+                </div>
+            <% } %>
+
+         </div>
+     <% } %>
+    </div>
+  </body>
+</html>
