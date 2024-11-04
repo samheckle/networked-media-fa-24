@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>class 18 demo</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="search-container">
+      <form method="GET" action="/search">
+        <input
+          type="text"
+          class="search-bar"
+          name="searchTerm"
+          placeholder="Search..."
+        />
+        <div class="search-checkbox">
+          <input
+            type="checkbox"
+            class="search-bar-checkbox"
+            id="imageOnlyCheckbox"
+            name="imageOnly"
+          />
+          <label for="imageOnlyCheckbox"
+            >Only include search results with images</label
+          >
+        </div>
+      </form>
+    </div>
+    <div class="form-container">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <div class="form-content-container">
+          <div>
+            <input type="text" name="text" placeholder="Say something..." />
+          </div>
+          <div class="submit-container">
+            <div>
+              <label for="file-upload" class="custom-file-upload"> </label>
+              <input id="file-upload" name="theimage" type="file" />
+            </div>
+            <div>
+              <input type="submit" name="submitbutton" value="Submit" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="all-posts">
+        <% posts.forEach( (post) => { %>
+        <div class="post">
+          <a href="/post/<%=post._id%>">
+            <span class="date"> <%= post.date %></span>
+            <% if(post.image) { %>
+                <img src="<%=post.image %>">
+            <% } %>
+            <p class="post-text"><%= post.text %></p>
+          </a>
+        </div>
+        <% }) %>
+      </div>
+  </body>
+</html>
