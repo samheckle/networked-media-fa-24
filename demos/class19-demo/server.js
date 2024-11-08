@@ -73,7 +73,46 @@ app.post('/upload', upload.single('theimage'), (req, res)=>{
 })
 
 app.get('/search', (req, res)=>{
-  
+  // query because get request
+  let searchTerm = req.query.searchTerm
+  let imageOnly = req.query.imageOnly
+
+  let query = {
+    text: new RegExp(searchTerm)
+  }
+
+  database.find(query, (err, searchedData)=>{
+
+    res.render('index.ejs', {posts: searchedData})
+  })
+})
+
+app.get('/post/:id', (req, res)=>{
+  let id = req.params.id
+
+  console.log(id)
+
+  let query = {
+    _id: id
+  }
+
+  database.findOne(query, (err, data)=>{
+    res.render('individualPost.ejs', {post: data})
+  })
+
+  // res.redirect('/')
+})
+
+app.post('/remove', (req, res)=>{
+  let id = req.body.postId
+  let query = {
+    _id: id
+  }
+
+  database.remove(query, (err, numRemoved)=>{
+    console.log('num removed elements', numRemoved)
+    res.redirect('/')
+  })
 })
 
 // what does the number signify?

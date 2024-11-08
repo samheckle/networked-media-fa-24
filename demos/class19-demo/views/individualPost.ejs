@@ -1,0 +1,14 @@
+<div class="post">
+    <a href="/post/<%=post._id%>">
+      <span class="date"> <%= post.date %></span>
+      <% if(post.image) { %>
+          <img src="<%=post.image %>">
+      <% } %>
+      <p class="post-text"><%= post.text %></p>
+    </a>
+    <!-- <form method="DELETE" action="/remove/<%=post._id%>"> -->
+    <form method="POST" action="/remove">
+        <input type="submit" value="Delete">
+        <input type="hidden" name="postId" value="<%=post._id%>">
+    </form>
+  </div>
