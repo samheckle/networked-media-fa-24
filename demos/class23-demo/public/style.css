@@ -1,0 +1,16 @@
+html, body {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+}
+canvas {
+  display: block;
+  margin: auto;
+}
+#sketch1{
+  width: 100%;
+}
+#sketch2{
+  position: absolute;
+  top:0;
+}

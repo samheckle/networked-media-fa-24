@@ -1,0 +1,36 @@
+.animated-div{
+    height: 50%;
+    width: 50%;
+    background-color: green;
+}
+
+.animated-div:hover{
+    /* transition: backgroundColor linear 2s;
+    background-color: yellow; */
+    /* animation-name: changeBackground;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+    animation: changeBackground 4s infinite;
+}
+
+.bouncing-div{
+    width: 50%;
+    height: 50%;
+    background-color: hotpink;
+}
+
+.animate__bounce{
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes changeBackground{
+    50%{
+        background-color: yellow;
+    }
+    60%{
+        background-color: purple;
+    }
+    80%{
+        background-color: blue;
+    }
+}
